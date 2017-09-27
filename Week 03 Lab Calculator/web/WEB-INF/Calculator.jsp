@@ -44,7 +44,7 @@
     <body>
         <h1>Simple JSP Calculator</h1>
         
-        <form action="index.jsp" method="GET">
+        <form action="Calculator" method="GET">
             First: <input type="text" name="first"><br/>
             Second: <input type="text" name="second"><br/>
             <input type="submit" name="operation" value="+"> <input type="submit" name="operation" value="-"> 
