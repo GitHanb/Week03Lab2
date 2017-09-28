@@ -53,8 +53,17 @@ public class CalculatorServlet extends HttpServlet {
 
                 calcPerformed = true;
                 request.setAttribute("result", result);
+                request.setAttribute("calcPerformed", true);
+            }
+            else
+            {
+                calcPerformed = false;
+                request.setAttribute("calcPerformed", false);
             }
         }
+        request.setAttribute("first", firstStr);
+        request.setAttribute("second", secondStr);
+        request.setAttribute("operation", operation);
         getServletContext().getRequestDispatcher("/WEB-INF/Calculator.jsp").forward(request, response);
     }
 

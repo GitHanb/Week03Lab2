@@ -18,5 +18,9 @@
         <c:if test="${calcPerformed == true}">
         RESULT: ${result}
         </c:if>
+    
+        <c:if test="${calcPerformed == false}">
+        You must enter both values!
+        </c:if>
     </body>
 </html>
