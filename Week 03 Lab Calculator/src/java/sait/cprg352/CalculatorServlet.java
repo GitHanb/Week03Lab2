@@ -27,8 +27,9 @@ public class CalculatorServlet extends HttpServlet {
         String secondStr = request.getParameter("second");
         String operation = request.getParameter("operation");
     
-        int result=0;
-        boolean calcPerformed=false;
+        int result = 0;
+        boolean calcPerformed = false;
+        boolean error = false;
     
         if (operation!=null)
         {
@@ -52,18 +53,25 @@ public class CalculatorServlet extends HttpServlet {
                 }
 
                 calcPerformed = true;
+                error = false;
+                request.setAttribute("error", error);
+                
+                request.setAttribute("first", firstStr);
+                request.setAttribute("second", secondStr);
+                request.setAttribute("operation", operation);
+                
                 request.setAttribute("result", result);
                 request.setAttribute("calcPerformed", true);
+                
+                
             }
             else
             {
-                calcPerformed = false;
-                request.setAttribute("calcPerformed", false);
+                error = true;
+                request.setAttribute("error", error);
             }
         }
-        request.setAttribute("first", firstStr);
-        request.setAttribute("second", secondStr);
-        request.setAttribute("operation", operation);
+        
         getServletContext().getRequestDispatcher("/WEB-INF/Calculator.jsp").forward(request, response);
     }
 

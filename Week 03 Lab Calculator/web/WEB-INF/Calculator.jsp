@@ -15,11 +15,12 @@
             <input type="submit" name="operation" value="*"> <input type="submit" name="operation" value="%">
         </form>
         <br/>
+        
         <c:if test="${calcPerformed == true}">
         RESULT: ${result}
         </c:if>
     
-        <c:if test="${calcPerformed == false}">
+        <c:if test="${error == true}">
         You must enter both values!
         </c:if>
     </body>
