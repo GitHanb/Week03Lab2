@@ -6,7 +6,6 @@
 package sait.cprg352;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +28,6 @@ public class CalculatorServlet extends HttpServlet {
     
         int result = 0;
         boolean calcPerformed = false;
-        boolean error = false;
     
         if (operation!=null)
         {
@@ -55,10 +53,8 @@ public class CalculatorServlet extends HttpServlet {
                 calcPerformed = true;
                 request.setAttribute("calcPerformed", calcPerformed);
                 request.setAttribute("result", result);
-                 
             }
         }
-        
         getServletContext().getRequestDispatcher("/WEB-INF/Calculator.jsp").forward(request, response);
     }
 
