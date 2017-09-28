@@ -61,7 +61,7 @@ public class CalculatorServlet extends HttpServlet {
                 request.setAttribute("operation", operation);
                 
                 request.setAttribute("result", result);
-                request.setAttribute("calcPerformed", true);
+                request.setAttribute("calcPerformed", calcPerformed);
                 
                 
             }
