@@ -53,22 +53,9 @@ public class CalculatorServlet extends HttpServlet {
                 }
 
                 calcPerformed = true;
-                error = false;
-                request.setAttribute("error", error);
-                
-                request.setAttribute("first", firstStr);
-                request.setAttribute("second", secondStr);
-                request.setAttribute("operation", operation);
-                
-                request.setAttribute("result", result);
                 request.setAttribute("calcPerformed", calcPerformed);
-                
-                
-            }
-            else
-            {
-                error = true;
-                request.setAttribute("error", error);
+                request.setAttribute("result", result);
+                 
             }
         }
         
