@@ -15,6 +15,8 @@
             <input type="submit" name="operation" value="*"> <input type="submit" name="operation" value="%">
         </form>
         <br/>
+        <c:if test="${calcPerformed == true}">
         RESULT: ${result}
+        </c:if>
     </body>
 </html>
